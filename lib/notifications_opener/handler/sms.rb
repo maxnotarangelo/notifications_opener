@@ -7,7 +7,7 @@ module NotificationsOpener
 
       def initialize(config, env)
         super(config, env)
-        c = build_params(env['QUERY_STRING'])
+        c = build_params(env['rack.input'].string)
         @from = c[:from]
         @to = c[:to]
         @message = c[:message]
