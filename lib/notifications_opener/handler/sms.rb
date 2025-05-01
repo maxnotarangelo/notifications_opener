@@ -30,7 +30,7 @@ module NotificationsOpener
         {
           from: p[config[:from_key_name]],
           to: p[config[:to_key_name]],
-          message: URI.decode(p[config[:message_key_name]]),
+          message: CGI.unescape(p[config[:message_key_name]]),
           location: config[:location]
         }
       end
